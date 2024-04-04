@@ -57,12 +57,12 @@ error reading from connection: read tcp [::1]:9292->[::1]:57979: i/o timeout
 ```
 
 How to demo the error?
-Option 1
-- set deadline for reading connection like `conn.SetReadDeadline(time.Now().Add(3 * time.Second))` on the server
-- then put time sleep in the client
-- or you can just start client and hold couple seconds to enter the messaeg request
-Option 2
-- we can check the duration conn.Read and set the read deadline less than the duration
+- Option 1
+    - set deadline for reading connection like `conn.SetReadDeadline(time.Now().Add(3 * time.Second))` on the server
+    - then put time sleep in the client
+    - or you can just start client and hold couple seconds to enter the messaeg request
+- Option 2
+    - we can check the duration conn.Read and set the read deadline less than the duration
 
 
 The cause?
